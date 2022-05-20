@@ -3,9 +3,8 @@ package quadraticEquation;
 import java.util.Scanner;
 
 public class Main {
-    private QuadraticEquation quadraticEquation;
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the value of a: ");
         double a = input.nextDouble();
@@ -13,7 +12,13 @@ public class Main {
         double b = input.nextDouble();
         System.out.print("Enter the value of c: ");
         double c = input.nextDouble();
-        this.quadraticEquation = new QuadraticEquation();
-        this.quadraticEquation.calculateQuadraticEquation(a,b,c);
+
+        QuadraticValues quadraticValues = new QuadraticValues();
+        quadraticValues.setA(a);
+        quadraticValues.setB(b);
+        quadraticValues.setC(c);
+
+        QuadraticEquation quadraticEquation = new QuadraticEquation(quadraticValues);
+        quadraticEquation.calculateQuadraticEquation();
     }
 }
